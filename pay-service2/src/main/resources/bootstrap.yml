@@ -2,4 +2,4 @@ spring:
   profiles:
     active: dev
   application:
-    name: platform-gateway
+    name: platform-pay-service2

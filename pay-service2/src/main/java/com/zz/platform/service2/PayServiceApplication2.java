@@ -1,5 +1,4 @@
-package com.zz.platform.gateway;
-
+package com.zz.platform.service2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class GateWayApplication {
+public class PayServiceApplication2 {
 
     public static void main(String[] args) {
-        SpringApplication.run(GateWayApplication.class, args);
+        SpringApplication.run(PayServiceApplication2.class, args);
     }
 
 }

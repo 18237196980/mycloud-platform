@@ -14,15 +14,32 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 10
       read-only: false
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
+
 feign:
   okhttp:
     enabled: true
 ribbon:
   ConnectTimeout: 5000 #服务请求连接超时时间（毫秒）
   ReadTimeout: 5000 #服务请求处理超时时间（毫秒）
-  #MaxAutoRetries: 1 # 对当前实例的重试次数
+
+#mybatis plus 设置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 返回类型为Map,显示null对应的字段
+    call-setters-on-nulls: true
+    # 查询时，关闭关联对象即时加载以提高性能
+    lazy-loading-enabled: true
+    # 允许使用自定义的主键值，数据表的PK生成策略将被覆盖
+    use-generated-keys: true
+    # 给予被嵌套的resultMap以字段-属性的映射支持
+    auto-mapping-behavior: full
+    # 数据库超过25秒仍未响应则超时
+    default-statement-timeout: 25
+    # 是否开启自动驼峰命名规则（camel case）映射
+    map-underscore-to-camel-case: false
+  # 自动扫描model目录
+  type-aliases-package: com.zz.platform.auth.model
